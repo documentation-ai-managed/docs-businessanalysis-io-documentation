@@ -1,0 +1,143 @@
+---
+title: Changelog
+description: Review the version history, new features, improvements, and fixes for BusinessAnalysis.io.
+---
+
+## Changelog Overview
+
+Stay updated with the latest releases of BusinessAnalysis.io. You access new features, performance improvements, and bug fixes through automatic updates in your web browser or by refreshing the app. Review the recent changes below to see enhancements in task management, project tracking, time logging, and team collaboration.
+
+<Columns cols={3}>
+  <Card title="Latest Release" icon="zap" href="#latest">
+    Discover v1.2.0 features.
+  </Card>
+  <Card title="All Releases" icon="list" href="/changelog/full">
+    Full version history.
+  </Card>
+  <Card title="Upgrade Guide" icon="download" href="#upgrade">
+    Quick update steps.
+  </Card>
+</Columns>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added advanced time tracking reports with export to CSV and PDF formats. Generate weekly summaries directly from the dashboard.
+- Introduced milestone dependencies in project management. Link tasks across projects for better workflow visualization.
+
+## Improvements
+
+- Enhanced real-time collaboration with live commenting on tasks and files.
+- Optimized dashboard load times by `>30%` for projects with 100+ tasks.
+
+## Bug Fixes
+
+- Fixed due date notifications not triggering for recurring tasks.
+- Resolved file sharing issues in team workspaces.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Implemented project status dashboards with Gantt chart views.
+- Added bulk task assignment for teams, supporting up to 50 users per project.
+
+## Improvements
+
+- Improved mobile responsiveness for time entry on tablets and phones.
+
+## Bug Fixes
+
+- Corrected progress tracking sync errors between web and integrated calendar apps.
+- Fixed search functionality for filtered task lists.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core task management: Create, assign, track progress, and set due dates.
+- Basic project creation with milestones and status tracking.
+- Time tracking integration with start/stop timers and hourly reports.
+- File sharing and real-time updates for collaboration.
+
+## Breaking Changes
+
+- Updated authentication flow to use OAuth 2.0 for better security.
+
+</Update>
+
+## How to Update
+
+Follow these steps to ensure you run the latest version of BusinessAnalysis.io.
+
+<Steps>
+  <Step title="Check Current Version" icon="info">
+    Open the settings menu in the top-right corner. View your version under `Account > About`.
+  </Step>
+  <Step title="Refresh App" icon="refresh-cw">
+    Press `Ctrl+R` (or `Cmd+R` on macOS) to reload the latest build.
+  </Step>
+  <Step title="Clear Cache if Needed" icon="trash-2">
+    In browser dev tools, clear site data for businessanalysis.io.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable auto-updates in your browser settings for seamless deployments. You receive notifications for major releases.
+</Callout>
+
+## Upcoming in v1.3.0
+
+<ExpandableGroup>
+  <Expandable title="AI-Powered Insights" default-open="true">
+    Plan to integrate AI agents for automatic task prioritization and workflow suggestions based on your historical data.
+  </Expandable>
+  <Expandable title="Advanced Integrations">
+    Slack and Google Workspace hooks for notifications and file sync.
+  </Expandable>
+</ExpandableGroup>
+
+## Integration Examples
+
+Use the new time tracking API in your custom scripts.
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  const response = await fetch('https://api.businessanalysis.io/v1/time/entries', {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${YOUR_API_TOKEN}` },
+    body: JSON.stringify({
+      taskId: 'task-123',
+      hours: 2.5,
+      date: '2024-10-15'
+    })
+  });
+  ```
+  ```python
+  import requests
+
+  response = requests.post(
+      'https://api.businessanalysis.io/v1/time/entries',
+      headers={'Authorization': f'Bearer {YOUR_API_TOKEN}'},
+      json={
+          'taskId': 'task-123',
+          'hours': 2.5,
+          'date': '2024-10-15'
+      }
+  )
+  ```
+</CodeGroup>
+
+<Tabs>
+  <Tab title="Web" icon="globe">
+    Updates deploy instantly—refresh your tab.
+  </Tab>
+  <Tab title="API Clients" icon="code">
+    Update your SDK to v1.2.0 via npm: `npm update businessanalysis-sdk`.
+  </Tab>
+</Tabs>

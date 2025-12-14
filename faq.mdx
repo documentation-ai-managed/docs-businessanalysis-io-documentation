@@ -1,0 +1,188 @@
+---
+title: Frequently Asked Questions
+description: Find answers to common queries about using BusinessAnalysis.io, from setup to advanced usage.
+---
+
+## Account and Security
+
+BusinessAnalysis.io prioritizes your data security. You create accounts using email verification, enable two-factor authentication (2FA), and manage permissions at the team level.
+
+<ExpandableGroup>
+
+<Expandable title="How do I create a BusinessAnalysis.io account?" default-open="true">
+
+Visit the [sign-up page](https://businessanalysis.io/signup) and provide your email, name, and a strong password. Verify your email to activate the account. Teams start with a free plan supporting up to 5 users.
+
+</Expandable>
+
+<Expandable title="What happens if I forget my password?">
+
+Use the "Forgot Password" link on the login page. Enter your email to receive a reset link valid for 15 minutes. Change your password immediately and enable 2FA for added protection.
+
+</Expandable>
+
+<Expandable title="How do I enable two-factor authentication (2FA)?">
+
+Navigate to Account Settings > Security. Scan the QR code with your authenticator app (like Google Authenticator) and enter the code. Back up your recovery codes securely.
+
+</Expandable>
+
+<Expandable title="Can I use single sign-on (SSO)?">
+
+Enterprise plans support SSO via Google Workspace, Microsoft Azure AD, or Okta. Contact support to configure SAML 2.0 integration.
+
+</Expandable>
+
+</ExpandableGroup>
+
+<Callout kind="tip">
+Store recovery codes offline. Never share your 2FA secrets.
+</Callout>
+
+## Troubleshooting Common Issues
+
+Encounter problems? Follow these steps to resolve most issues quickly.
+
+<Steps>
+
+<Step title="Check your internet connection" icon="wifi">
+
+Test your connection speed at [speedtest.net](https://www.speedtest.net). BusinessAnalysis.io requires a stable connection with `<10ms` latency for real-time collaboration.
+
+</Step>
+
+<Step title="Clear browser cache and cookies">
+
+Open your browser settings:
+
+<Tabs>
+
+<Tab title="Chrome" icon="chrome">
+
+1. Press `Ctrl+Shift+Delete` (Windows) or `Cmd+Shift+Delete` (macOS).  
+2. Select "Cookies and other site data" and "Cached images and files".  
+3. Clear data and reload the page.
+
+```bash
+# Or use DevTools
+# F12 > Application > Storage > Clear site data
+```
+
+</Tab>
+
+<Tab title="Firefox" icon="firefox">
+
+1. Press `Ctrl+Shift+Delete`.  
+2. Choose "Cookies" and "Cache".  
+3. Clear and restart.
+
+</Tab>
+
+</Tabs>
+
+</Step>
+
+<Step title="Disable browser extensions">
+
+Extensions like ad blockers can interfere. Disable them temporarily via your browser's extensions menu and test again.
+
+</Step>
+
+<Step title="Contact support">
+
+If issues persist, use the in-app help widget or email support@businessanalysis.io with screenshots.
+
+</Step>
+
+</Steps>
+
+## Mobile and Accessibility
+
+BusinessAnalysis.io works seamlessly on mobile devices and follows WCAG 2.1 AA standards.
+
+### Mobile Usage
+
+Access the full web app via your mobile browser—no native app required. Enable offline mode for task viewing.
+
+<Tabs>
+
+<Tab title="iOS Setup" icon="apple">
+
+- Use Safari for best performance.  
+- Add to home screen: Share > Add to Home Screen.  
+- Supports push notifications for due dates.
+
+</Tab>
+
+<Tab title="Android Setup" icon="android">
+
+- Recommended: Chrome browser.  
+- Install as PWA: Menu > Add to Home screen.  
+- Gesture navigation for projects.
+
+```javascript
+// Example: Track time via PWA
+navigator.serviceWorker.register('/sw.js');
+```
+
+</Tab>
+
+</Tabs>
+
+### Accessibility Features
+
+- Screen reader support (VoiceOver, TalkBack).  
+- High contrast mode.  
+- Keyboard navigation throughout.  
+
+<Callout kind="success">
+Test with your preferred assistive technology. Report issues to accessibility@businessanalysis.io.
+</Callout>
+
+## Support Resources
+
+Get help from multiple channels.
+
+<Columns cols={3}>
+
+<Card title="Documentation" icon="book-open" href="/docs">
+
+Explore guides on tasks, projects, and integrations.
+
+</Card>
+
+<Card title="Community Forum" icon="users" href="https://forum.businessanalysis.io" target="_blank">
+
+Ask questions and share tips with other users.
+
+</Card>
+
+<Card title="Contact Support" icon="mail" href="/support" cta="Submit Ticket">
+
+Priority response for paid plans (under 2 hours).
+
+</Card>
+
+</Columns>
+
+<Expandable title="Advanced Integrations">
+
+Connect via webhooks:
+
+```javascript
+// Example webhook payload
+POST https://hooks.businessanalysis.io/your-webhook
+
+{
+  "event": "task.updated",
+  "data": {
+    "id": "task_123",
+    "status": "completed",
+    "assignee": "user@example.com"
+  }
+}
+```
+
+Use `{WEBHOOK_URL}` from Settings > Integrations.
+
+</Expandable>

@@ -1,0 +1,124 @@
+---
+title: Getting Started with BusinessAnalysis.io
+description: Quickly set up your account, explore the dashboard, and create your first task or project to begin using the platform.
+---
+
+## Account Creation and Login
+
+Follow these steps to create your account and access the dashboard.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Visit `https://businessanalysis.io` and click **Sign Up**.
+
+    Enter your email, create a strong password, and provide your full name.
+
+    Verify your email by clicking the link sent to your inbox.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Return to the homepage and click **Log In**.
+
+    Enter your credentials. Enable two-factor authentication for added security.
+  </Step>
+  <Step title="Access Dashboard" icon="layout-dashboard">
+    You land on the main dashboard. Bookmark this page for quick access.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Use a business email for account recovery and team invitations.
+</Callout>
+
+## Dashboard Tour
+
+The dashboard provides an overview of your tasks, projects, and time tracking. Explore these key sections:
+
+<Columns cols={3}>
+  <Card title="Tasks" icon="list" href="/docs/tasks">
+    View pending, in-progress, and completed tasks. Filter by due date or assignee.
+  </Card>
+  <Card title="Projects" icon="folder" href="/docs/projects">
+    Track project status with milestones and progress bars.
+  </Card>
+  <Card title="Time Reports" icon="clock" href="/docs/time-tracking">
+    Generate weekly reports and visualize billable hours.
+  </Card>
+</Columns>
+
+## Create Your First Task
+
+Start managing your work by adding a task. Choose your preferred method:
+
+<Tabs>
+  <Tab title="Quick Task" icon="plus">
+    <Steps>
+      <Step title="Click Add Task" icon="plus-circle">
+        From the dashboard, select **New Task**.
+      </Step>
+      <Step title="Fill Details" icon="edit-3">
+        Enter title: `Prepare Q1 Financial Report`.
+
+        Set due date: `2024-03-15`.
+
+        Assign to yourself and add description: `Analyze revenue data and create charts.`
+      </Step>
+      <Step title="Save" icon="check-circle">
+        Click **Create**. The task appears in your list.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Advanced Task" icon="settings">
+    Use the full form to set priority (`high`), labels (`finance`), and attach files.
+  </Tab>
+</Tabs>
+
+## Create Your First Project
+
+Organize related tasks into a project:
+
+<Steps>
+  <Step title="New Project" icon="folder-plus">
+    Navigate to **Projects** > **New Project**.
+  </Step>
+  <Step title="Configure" icon="sliders">
+    Name: `Q4 Marketing Campaign`.
+
+    Description: `Launch new product awareness campaign across social channels.`
+
+    Set start date: `2024-10-01` and end date: `2024-12-31`.
+  </Step>
+  <Step title="Add Milestones" icon="flag">
+    Create milestones like `Content Creation` and `Ad Launch`.
+  </Step>
+</Steps>
+
+## Initial Configuration
+
+Customize your workspace for optimal use.
+
+<Expandable title="Team and Integrations" default-open="true">
+  Invite team members via **Settings > Team**.
+
+  Connect tools:
+
+  <CodeGroup tabs="Slack,Google Calendar">
+    ```javascript
+    // Slack webhook setup (use your webhook URL)
+    const webhookUrl = 'https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK';
+    ```
+    ```javascript
+    // Google Calendar API (use your client ID)
+    const calendarId = 'your-calendar@group.calendar.google.com';
+    ```
+  </CodeGroup>
+
+  Enable notifications for due dates and mentions.
+</Expandable>
+
+<Expandable title="Preferences">
+  Set default views, time zone (`America/New_York`), and theme (light/dark).
+</Expandable>
+
+<Callout kind="success">
+  Congratulations! You now manage tasks and projects effectively with BusinessAnalysis.io.
+</Callout>

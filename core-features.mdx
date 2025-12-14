@@ -1,0 +1,136 @@
+---
+title: Core Features of BusinessAnalysis.io
+description: Understand the fundamental capabilities for task management, project organization, time tracking, and team collaboration.
+---
+
+## Overview
+
+BusinessAnalysis.io provides essential tools to streamline your workflow. You create tasks, organize projects, log time, and collaborate with your team through an intuitive web interface. These core features work together to boost productivity without complexity.
+
+<Columns cols={2}>
+  <Card title="Task Management" icon="check-square" href="/docs/tasks">
+    Create, assign, and track tasks with due dates and priorities.
+  </Card>
+  <Card title="Project Management" icon="folder" href="/docs/projects">
+    Build projects with milestones and monitor overall status.
+  </Card>
+  <Card title="Time Tracking" icon="clock" href="/docs/time">
+    Log hours accurately and generate insightful reports.
+  </Card>
+  <Card title="Collaboration" icon="users" href="/docs/collaboration">
+    Share files and communicate in real-time.
+  </Card>
+</Columns>
+
+## Task Creation and Tracking
+
+You start by creating tasks directly from the dashboard. Assign them to team members, set due dates, and define priorities.
+
+<Steps>
+  <Step title="Create Task" icon="plus">
+    Click the `+ New Task` button. Enter title, description, and assignee.
+
+    ```javascript
+    // Example API integration for task creation
+    const newTask = await fetch('https://api.businessanalysis.io/tasks', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer YOUR_API_KEY' },
+      body: JSON.stringify({
+        title: 'Review quarterly report',
+        dueDate: '2024-12-15',
+        priority: 'high'
+      })
+    });
+    ```
+  </Step>
+  <Step title="Track Progress" icon="eye">
+    Use the progress bar to update status. Set reminders for overdue items.
+  </Step>
+  <Step title="Review Tasks" icon="list">
+    Filter by status, assignee, or due date in the task list view.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable notifications in settings to stay updated on task changes without constant checking.
+</Callout>
+
+## Project Milestones and Status
+
+Organize tasks into projects with milestones. You track project health through visual status indicators.
+
+<Tabs>
+  <Tab title="Dashboard View" icon="layout">
+    Overview shows completion percentage and upcoming milestones.
+
+    | Milestone | Status | Due Date |
+    |-----------|--------|----------|
+    | Planning  | 80%   | 2024-11-30 |
+    | Execution | 50%   | 2024-12-15 |
+    | Review    | 0%    | 2024-12-31 |
+  </Tab>
+  <Tab title="Gantt View" icon="bar-chart-3">
+    Visualize timelines and dependencies.
+
+    ```mermaid
+    gantt
+    title Project Timeline
+    dateFormat  YYYY-MM-DD
+    section Planning
+    Research :a1, 2024-11-01, 15d
+    Design    :after a1, 10d
+    section Execution
+    Development :2024-11-20, 20d
+    Testing     :2024-12-10, 10d
+    ```
+  </Tab>
+</Tabs>
+
+## Time Logging and Reports
+
+Log time against tasks or projects effortlessly. Generate reports for billing or performance analysis.
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  // Log time entry via API
+  await fetch('https://api.businessanalysis.io/time-entries', {
+    method: 'POST',
+    body: JSON.stringify({
+      taskId: 'task-123',
+      hours: 2.5,
+      description: 'Code review session'
+    })
+  });
+  ```
+  ```python
+  # Log time entry
+  import requests
+  requests.post('https://api.businessanalysis.io/time-entries',
+    json={
+      'taskId': 'task-123',
+      'hours': 2.5,
+      'description': 'Code review session'
+    },
+    headers={'Authorization': 'Bearer YOUR_API_KEY'}
+  )
+  ```
+</CodeGroup>
+
+<Expandable title="Generate Custom Reports" default-open="false">
+  Select date range, tasks, and metrics. Export as PDF or CSV.
+
+  Common report types include:
+  - Billable hours summary
+  - Productivity trends
+  - Team utilization
+</Expandable>
+
+## Collaboration and File Sharing
+
+Share files securely within projects. Real-time updates keep everyone aligned.
+
+<Callout kind="info">
+  All shared files support version history. You revert changes if needed.
+</Callout>
+
+Invite team members via email. Use `@mentions` in comments for direct notifications. Integrate with tools like Slack for seamless communication. These features ensure your team collaborates efficiently from anywhere.
